@@ -52,6 +52,10 @@ def create_prompt(resume, job_roles_csv):
         '              "type": "string",\n'
         '              "description": "The title of the job."\n'
         "            },\n"
+        '            "url": {\n'
+        '              "type": "string",\n'
+        '              "description": "The link to the job listing."\n'
+        "            },\n"
         '            "company": {\n'
         '              "type": "string",\n'
         '              "description": "The name of the company offering the job."\n'
@@ -151,4 +155,5 @@ if __name__ == "__main__":
         unsafe_allow_html=True,
     )
 
-    st.write(df[["jobTitle", "company", "compatibilityScore"]])
+    # st.write(df[["jobTitle", "company", "compatibilityScore"]])
+    st.write(df)
