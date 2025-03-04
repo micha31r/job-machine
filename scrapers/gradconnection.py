@@ -27,9 +27,13 @@ def scrape_job_details(url):
     driver.get(url)
 
     # Expand details
-    show_more_buttons = driver.find_elements(By.CSS_SELECTOR, ".btn-show-link")
-    for link in show_more_buttons:
-        link.click()
+    try:
+        show_more_buttons = driver.find_elements(By.CSS_SELECTOR, ".btn-show-link")
+        for link in show_more_buttons:
+            link.click()
+    except:
+        # Some pages simply don't have a show more button
+        pass
 
     # Expand AI job summary
     try:
