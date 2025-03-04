@@ -159,7 +159,7 @@ def get_job_details(job_urls):
             # Save to CSV every nth job
             if index % 1 == 0:
                 csv_headers = job_details[0].keys()
-                save_to_csv("gradconnection-job-details", "a+", csv_headers, [job.values() for job in job_details])
+                save_to_csv("gradconnection-job-details", "a+", csv_headers, [details.values()])
         except Exception as ex:
             print(f"Failed to scrape {url}. {ex}")
             csv_headers = ["url", "exception"]
