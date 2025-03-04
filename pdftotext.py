@@ -1,5 +1,6 @@
 import pymupdf
 import sys
+import streamlit as st
 
 
 def pdf_to_text(*file_paths):
@@ -15,7 +16,6 @@ def pdf_to_text(*file_paths):
             for page in doc:  # iterate the document pages
                 text = page.get_text()
                 out.write(text)  # write text of page
-
         except pymupdf.FileNotFoundError:
             print(f"{path} reading failed")
             continue
